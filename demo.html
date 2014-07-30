@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="src/pozeray.js"></script>
+	<script type="text/javascript" src="src/pozeray-console.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/pozeray-console.css">
+</head>
+<body>
+	<h1>Pozeray Demo</h1>
+	<div>
+		<div>
+			<input id="areaName" type="text" placeholder="Area name" value="Pozeray"/>
+			<button onclick="new Logger({area: $('#areaName').val()}).error('Example')">Error</button>
+			<button onclick="new Logger({area: $('#areaName').val()}).warn('Example')">Warning</button>
+			<button onclick="new Logger({area: $('#areaName').val()}).info('Example')">Info</button>
+			<button onclick="new Logger({area: $('#areaName').val()}).log('Example')">Log</button>
+			<button onclick="new Logger({area: $('#areaName').val()}).debug('Example')">Debug</button>
+		</div>
+	</div>
+</body>
+</html>

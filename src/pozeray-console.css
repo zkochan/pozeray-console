@@ -1,0 +1,68 @@
+.pozeray-icon {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	font-family: monospace;
+	padding: 10px 15px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	background-color: #F1F1F1;
+}
+
+.pozeray-console-container {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	z-index: 10000;
+	display: none;
+}
+.pozeray-console-container.active {
+	display: block;
+}
+.pozeray-console-filters-container {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	background-color: #F1F1F1;
+	padding: 5px 15px;
+}
+.pozeray-console-close {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4UlEQVR4Xo2TYQrCMAyFN397AG8oCKMwESbCYCBMBhsT/SXeUBA8gNSXakghXdyDt7Rd8y10Tea9D4Z62NHYMlTDd57zYgd7sgWBqmjfSABSy4sWBNol9vULPJ6Z1pjnueMJxmWoUuvB9DIQtR154l1FuVQBQQaEIlVJsNYeOSfEL+AHuSKsFcJIFoBAbgKxkwWgtTIAbwoaIKfdIMCT6rCnSgKQfAy37L9aQA4CkGQsKhXwJgE5MkRuonbJPWDchZoqWE6c9hD9nTPCNtN68RcuMXVmMznuxrgjm3ntLM32AV9m7vTAsTYoAAAAAElFTkSuQmCC);
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top: 11px;
+}
+.messages-container {
+	height: 280px;
+	overflow-y: scroll;
+	background-color: white;
+}
+.message-container {
+	border-bottom: 1px solid #E9E9E9;
+	padding: 5px 15px;
+	font-family: monospace;
+}
+.message-container.error {
+	border-left: 3px solid red;
+}
+.message-container.warn {
+	border-left: 3px solid yellow;
+}
+.message-container.info {
+	border-left: 3px solid #00A3FF;
+}
+.message-container.debug {
+	border-left: 3px solid #AD00FF;
+}
+.message-area {
+	cursor: pointer;
+	background-color: #D8D8D8;
+	padding: 1px 7px;
+	border: 1px solid #B9B9B9;
+	border-radius: 3px;
+	margin-right: 7px;
+}
