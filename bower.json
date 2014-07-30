@@ -1,0 +1,23 @@
+{
+  "name": "pozeray-console",
+  "version": "0.0.1",
+  "homepage": "https://github.com/z-core/pozeray-console",
+  "authors": [
+    "Zoltan Kochan"
+  ],
+  "description": "A console to view Pozeray logs.",
+  "keywords": [
+    "logging"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pozeray": "~0.x.x"
+  }
+}
