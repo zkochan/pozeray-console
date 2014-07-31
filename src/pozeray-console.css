@@ -16,15 +16,23 @@
 	left: 0;
 	z-index: 10000;
 	display: none;
+	background-color: #F1F1F1;
+	border-top: 1px solid #CCC;
+	padding: 0 10px;
+	box-sizing: border-box;
+	opacity: 0.9;
+	font-family: arial;
+	font-size: 13px;
 }
 .pozeray-console-container.active {
 	display: block;
 }
 .pozeray-console-filters-container {
-	border-top: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
-	background-color: #F1F1F1;
-	padding: 5px 15px;
+	padding: 5px 0;
+}
+.pozeray-console-filters-container label {
+	margin-right: 15px;
 }
 .pozeray-console-close {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4UlEQVR4Xo2TYQrCMAyFN397AG8oCKMwESbCYCBMBhsT/SXeUBA8gNSXakghXdyDt7Rd8y10Tea9D4Z62NHYMlTDd57zYgd7sgWBqmjfSABSy4sWBNol9vULPJ6Z1pjnueMJxmWoUuvB9DIQtR154l1FuVQBQQaEIlVJsNYeOSfEL+AHuSKsFcJIFoBAbgKxkwWgtTIAbwoaIKfdIMCT6rCnSgKQfAy37L9aQA4CkGQsKhXwJgE5MkRuonbJPWDchZoqWE6c9hD9nTPCNtN68RcuMXVmMznuxrgjm3ntLM32AV9m7vTAsTYoAAAAAElFTkSuQmCC);
@@ -33,30 +41,34 @@
 	display: inline-block;
 	cursor: pointer;
 	position: absolute;
-	right: 5px;
+	right: 10px;
 	top: 11px;
 }
 .messages-container {
 	height: 280px;
 	overflow-y: scroll;
 	background-color: white;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
 }
 .message-container {
-	border-bottom: 1px solid #E9E9E9;
+	border-left: 8px solid transparent;
 	padding: 5px 15px;
-	font-family: monospace;
+}
+.message-container:nth-child(odd) {
+	background-color: #F7F7F7;
 }
 .message-container.error {
-	border-left: 3px solid red;
+	border-left-color: #F00;
 }
 .message-container.warn {
-	border-left: 3px solid yellow;
+	border-left-color: #FFEB00;
 }
 .message-container.info {
-	border-left: 3px solid #00A3FF;
+	border-left-color: #00A3FF;
 }
 .message-container.debug {
-	border-left: 3px solid #AD00FF;
+	border-left-color: #AD00FF;
 }
 .message-area {
 	cursor: pointer;

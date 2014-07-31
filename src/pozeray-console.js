@@ -4,22 +4,26 @@
 			'<div class="pozeray-icon">pozeray</div>' +
 			'<div class="pozeray-console-container">' +
 				'<div class="pozeray-console-filters-container">' +
-					'Area' +
-					'<select id="messageAreas">' +
-						'<option value="">All</option>' +
-					'</select>' +
-					'Type' +
-					'<select id="messageTypes">' +
-						'<option value="">All</option>' +
-						'<option value="error">Errors</option>' +
-						'<option value="warn">Warnings</option>' +
-						'<option value="info">Info</option>' +
-						'<option value="log">Logs</option>' +
-						'<option value="debug">Debug</option>' +
-					'</select>' +
+					'<label>' +
+						'Area' +
+						'<select id="messageAreas">' +
+							'<option value="">All</option>' +
+						'</select>' +
+					'</label>' +
+					'<label>' +
+						'Type' +
+						'<select id="messageTypes">' +
+							'<option value="">All</option>' +
+							'<option value="error">Errors</option>' +
+							'<option value="warn">Warnings</option>' +
+							'<option value="info">Info</option>' +
+							'<option value="log">Logs</option>' +
+							'<option value="debug">Debug</option>' +
+						'</select>' +
+					'</label>' +
 					'<label><input id="autoscroll" type="checkbox" checked> autoscroll</label>' +
-					'<button id="clearButton">Clear</button>' +
 					'<input id="consoleFilter" type="text" placeholder="Filter">' +
+					'<button id="clearButton">Clear</button>' +
 					'<span class="pozeray-console-close"></span>' +
 				'</div>' +
 				'<div class="messages-container"></div>' +
