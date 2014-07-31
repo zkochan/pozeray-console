@@ -72,9 +72,12 @@
 }
 .message-area {
 	cursor: pointer;
-	background-color: #D8D8D8;
-	padding: 1px 7px;
-	border: 1px solid #B9B9B9;
-	border-radius: 3px;
-	margin-right: 7px;
+	margin-right: 5px;
+	font-weight: bold;
+}
+.message-area:after {
+	content: ':';
+}
+.message-area:hover {
+	text-decoration: underline;
 }

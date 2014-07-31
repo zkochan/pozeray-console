@@ -131,6 +131,12 @@
 		/*$messagesContainer.scroll(function () {
 			$autoscroll.removeAttr('checked');
 		});*/
+
+		$(window).keydown(function (e) {
+			if (e.keyCode == 90 /*z*/) {
+				toggleConsole();
+			}
+		});
 	}
 
 	$(function () {
