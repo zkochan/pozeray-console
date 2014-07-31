@@ -30,7 +30,16 @@
 			'</div>';
 
 		$('body').append(template);
-		
+
+		var POZERAY_KEY = 'pozeray-settings',
+			savedSettings;
+		try {
+			savedSettings = JSON.parse(localStorage.getItem(POZERAY_KEY));
+		} catch (err) {
+			savedSettings = {};
+		}
+
+		var settings = $.extend({isVisible: false, autoscroll: true}, savedSettings);
 
 		// DOM elements
 		var $messageAreas = $('#messageAreas'),
@@ -120,11 +129,15 @@
 
 		$clearButton.click(messages.clear);
 
-		pozeray.listen(function (message) {
-			if (areas.indexOf(message.area) === -1) {
-				areas.push(message.area);
-				$messageAreas.append('<option value="' + message.area + '">' + message.area + '</option>');
+		function addArea(area) {
+			if (areas.indexOf(area) === -1) {
+				areas.push(area);
+				$messageAreas.append('<option value="' + area + '">' + area + '</option>');
 			}
+		}
+
+		pozeray.listen(function (message) {
+			addArea(message.area);
 			messages.add(message);
 		});
 
@@ -136,6 +149,30 @@
 			if (e.keyCode == 90 /*z*/) {
 				toggleConsole();
 			}
+		});
+
+
+		if (settings.isVisible) {
+			toggleConsole();
+		}
+		addArea(settings.area);
+		$messageAreas.val(settings.area);
+		$messageTypes.val(settings.type);
+		$consoleFilter.val(settings.filter);
+		if (!settings.autoscroll) {
+			$autoscroll.removeAttr('checked');
+		}
+		messages.refilter();
+
+
+		$(window).unload(function () {
+			settings.isVisible = $consoleContainer.is(':visible');
+			settings.area = $messageAreas.val();
+			settings.type = $messageTypes.val();
+			settings.filter = $consoleFilter.val();
+			settings.autoscroll = $autoscroll.is(':checked');
+
+			localStorage.setItem(POZERAY_KEY, JSON.stringify(settings));
 		});
 	}
 
